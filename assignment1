@@ -1,0 +1,116 @@
+#include<iostream>
+using namespace std;
+
+int main()
+{
+int ch;
+do
+{
+cout<<"\n1.Add two no.s\n2.To check even or odd\n3.To check prime or not\n4.To check vowel or not\n5.To check leap year or not\n6.To check Armstrong no.\n7.To check Palindrome or not\n8.To convert Decimal to Binary\nEnter your choice:   ";
+cin>>ch;
+switch(ch)
+{
+case 1:
+int a,b;
+cout<<"\nEnter two no.s:\n";
+cin>>a>>b;
+cout<<"\nAddition of two no.s:   "<<a+b<<endl;
+break;
+case 2:
+int n;
+cout<<"\nEnter the no.:  ";
+cin>>n;
+if((n&1)==1)
+cout<<"\nGiven no. is odd\n";
+else
+cout<<"\nGiven no. is even\n";
+break;
+case 3:
+int i,no;
+cout<<"\nEnter the no. greater than equal to 2:  ";
+cin>>no;
+for(i=2;i<no;i++)
+{
+if(no%i==0)
+{
+cout<<"\nGiven no. is not a prime no\n";
+break;
+}
+}
+if(no==i)
+{
+cout<<"\nGiven no. is Prime\n";
+}
+break;
+case 4:
+char vowel;
+cout<<"\nEnter the character:   ";
+cin>>vowel;
+if(vowel=='a' || vowel=='e' || vowel=='i' || vowel=='o' || vowel=='u')
+cout<<"\nGiven character is vowel\n";
+else
+cout<<"\nGiven character is not vowel\n";
+break;
+case 5:
+int year;
+cout<<"\nEnter the year:   ";
+cin>>year;
+if((year%4)==0)
+cout<<"\n"<<year<<" is a leap year\n";
+else
+cout<<"\n"<<year<<" is not a leap year\n";
+break;
+case 6:
+int num,digit,temp,sum;
+sum=0;
+cout<<"\nEnter the no.:   ";
+cin>>num;
+for(temp=num;temp!=0;)
+{
+digit=temp%10;
+sum=sum+(digit*digit*digit);
+temp=temp/10;
+}
+if(sum==num)
+{
+cout<<"\nGiven no. is armstrong no.\n";
+}
+else
+{
+cout<<"\nGiven no. is not armstrong no.\n";
+}
+break;
+case 7:
+int pal,di,rev,nm;
+rev=0;
+cout<<"\nEnter the no.:  ";
+cin>>nm;
+pal=nm;
+do
+{
+di=nm%10;
+rev=(rev*10)+di;
+nm=nm/10;
+}while(nm!=0);
+if(pal==rev)
+{cout<<"\nThe no. is palindrome\n";}
+else
+{cout<<"\nThe no. is not palindrome\n";}
+break;
+case 8:
+int dec,bin;
+cout<<"\nEnter the decimal no. to convert:  ";
+cin>>dec;
+cout<<"\nBinary equivalent of "<<dec<<" is : ";
+while(dec>0)
+{
+bin=dec%2;
+cout<<bin;
+dec=dec/2;
+}
+break; 
+}
+}while(ch!=0);
+return 0;
+}
+
