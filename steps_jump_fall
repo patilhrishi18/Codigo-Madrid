@@ -1,0 +1,23 @@
+#include<stdio.h>
+
+
+int main()
+{ int n,u,f,count=0,a=0,ans;
+printf("enter the steps to climb");
+scanf("%d",&n);
+printf("enter the jump upwards");
+scanf("%d",&u);
+printf("enter the downfall");
+scanf("%d",&f);
+for(ans=0;ans<n;)
+{
+   ans=a+u;
+   a=ans-f;
+   count++;
+   if(ans==n)
+   break;
+    
+}
+printf("answer=%d",count);
+   
+}
